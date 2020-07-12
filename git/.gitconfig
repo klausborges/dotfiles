@@ -1,0 +1,104 @@
+[core]
+  editor = nvim
+  whitespace = trailing-space
+
+# Avoid trying to guess defaults for `user.name` and `user.email`
+[user]
+  useConfigOnly = true
+
+# Set better push defaults
+[push]
+  default = current
+  followTags
+
+# Colorize output of tools only when written to the terminal
+[color]
+  ui = auto
+  diff = auto
+  branch = auto
+
+# Set the diff tool to use with git difftool (overrides `merge.tool`)
+[diff]
+  tool = kitty
+
+# Disable prompt before invoking the diff tool
+[difftool]
+  prompt = false
+  trustExitCode = true
+
+[difftool "kitty"]
+  cmd = kitty +kitten diff $LOCAL $REMOTE
+
+# Relative dates for log (e.g. 3 days ago)
+[log]
+  date = relative
+
+[alias]
+  s  = status -sbu
+  st = status
+  c  = commit
+  p  = push
+  b  = branch
+  co = checkout
+
+  # Diff
+  d   = diff --patch-with-stat
+  ds  = diff --patch-with-stat --staged
+  dh  = diff HEAD
+  dh1 = diff HEAD~1
+  dt  = difftool
+  dts = difftool --staged
+
+  # Log
+  l  = log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'
+  l2 = log --decorate --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  l3 = log --decorate --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
+
+  # View abbreviated hashes, description, and history graph of the latest 20 commits
+  sl = log --pretty=oneline -n 20 --graph --abbrev-commit
+
+  # Unstage files
+  unstage = reset HEAD --
+
+  # Rewind the last commit keeping changes
+  uncommit = reset --soft HEAD~
+
+  # Rewind the last commit discarding changes
+  hard-reset = reset --hard HEAD~
+
+  # List contributors
+  contributors = shortlog -nse
+
+  # Shallow clone
+  shallow-clone = clone --depth 1
+
+  # Find commit
+  find-commit = "!f() { git log --pretty='%C(yellow)%h%Creset -%Cred%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --grep=$1; }; f"
+
+  # Find string history
+  find-string = "!f() { git log --pretty='%C(yellow)%h%Creset -%Cred%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' -S$1; }; f"
+
+# TODO document this
+[url "git@github.com:"]
+  insteadOf     = "gh:"
+  pushInsteadOf = "gh:"
+
+[url "git@gist.github.com:"]
+  insteadOf     = "gist:"
+  pushInsteadOf = "gist:"
+
+[url "git@gitlab.com:"]
+  insteadOf     = "gl:"
+  pushInsteadOf = "gl:"
+
+# Colors
+[include]
+  path = ~/.gitconfig.dracula
+
+# Local user configuration and credentials
+[include]
+  path = ~/.gitconfig.personal
+
+# Development user configuration and credentials
+[includeIf "gitdir:~/dev/"]
+  path = ~/.gitconfig.dev

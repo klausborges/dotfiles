@@ -1,0 +1,15 @@
+[color "status"]
+  added = green
+  changed = cyan
+  untracked = red dim
+  branch = magenta bold
+  localBranch = magenta bold
+  remoteBranch = magenta
+
+[color "diff"]
+  new = green bold
+  old = red dim bold
+  meta = yellow
+  frag = cyan
+
+# vim: ft=gitconfig :
