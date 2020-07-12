@@ -1,0 +1,25 @@
+# GPG Agent
+SSH_AGENT_PID         DEFAULT=
+SSH_AUTH_SOCK         DEFAULT=${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh
+
+# Qt
+# TODO Disable this on Plasma session?
+QT_QPA_PLATFORMTHEME  DEFAULT=qt5ct
+
+# XDG
+# TODO Check if this is it
+XDG_DATA_HOME         DEFAULT=@{HOME}/.local/share
+XDG_CONFIG_HOME       DEFAULT=@{HOME}/.config
+XDG_CACHE_HOME        DEFAULT=@{HOME}/.cache
+
+# TODO Clean $HOME
+# WGETRC                DEFAULT=${XDG_CONFIG_HOME}/wgetrc
+# XAUTHORITY            DEFAULT=${XDG_RUNTIME_DIR}/Xauthority
+# GNUPGHOME             DEFAULT=${XDG_DATA_HOME}/gnupg
+# ZDOTDIR               DEFAULT=${XDG_CONFIG_HOME}/zsh
+# LESSHISTFILE          DEFAULT=${XDG_DATA_HOME}/less_history
+# HISTFILE              DEFAULT=${XDG_DATA_HOME}/zsh/history
+
+# TODO See if these pollute my system before uncommenting
+# ICEAUTHORITY          DEFAULT=${XDG_RUNTIME_DIR}/ICEauthority
+# TMUX_TMPDIR           DEFAULT=${XDG_RUNTIME_DIR}/tmux
