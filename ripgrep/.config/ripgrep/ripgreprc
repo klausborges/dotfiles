@@ -1,0 +1,11 @@
+# Search hidden files and directories
+--hidden
+
+# Follow symbolic links
+--follow
+
+# Don't print extremely long lines
+--max-columns=10000
+
+# Search case insensitively if pattern is all lowercase
+--smart-case

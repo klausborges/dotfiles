@@ -1,0 +1,35 @@
+# Syncthing backups
+.stversions
+
+# Images
+*.png
+*.jpg
+*.gif
+
+# Videos
+*.mp4
+*.avi
+*.mkv
+
+# Archives
+*.gz
+*.tar
+*.zip
+*.rar
+*.7z
+
+# Backup files
+*~
+
+# Lock files
+*.lock
+package-lock.json
+
+# Directories
+.git/
+.svn/
+.tldr/
+node_modules/
+Trash/
+vendor/
+.steam/
