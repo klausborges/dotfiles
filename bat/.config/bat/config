@@ -1,0 +1,6 @@
+# Show line numbers, Git modifications and file header (but no grid)
+--style="changes,snip"
+
+# Show colors only if in an interactive shell
+--color="auto"
+--theme="Dracula"
