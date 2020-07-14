@@ -1,0 +1,9 @@
+[user]
+  name = "Klaus Borges"
+  email = "klausborgs@gmail.com"
+  signingKey = "CC0CC31F62F1A759"
+
+[commit]
+  gpgSign
+
+# vim: set ft=gitconfig :
